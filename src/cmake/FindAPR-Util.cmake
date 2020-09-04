@@ -52,8 +52,6 @@ else()
     else()
       find_library(APR_UTIL_LIBRARIES NAMES libaprutil-1)
       find_program(APR_UTIL_DLL libaprutil-1.dll)
-      find_library(XMLLIB_LIBRARIES NAMES libexpatd)
-      find_program(XMLLIB_DLL libexpatd.dll)
     endif()
 endif()
 

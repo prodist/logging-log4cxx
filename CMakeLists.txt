@@ -25,7 +25,6 @@ find_package(APR-Util REQUIRED)
 
 # Find expat for XML parsing
 find_package(EXPAT REQUIRED)
-set(XMLLIB_LIBRARIES EXPAT_LIBRARIES)
 
 # Building
 add_subdirectory(src)

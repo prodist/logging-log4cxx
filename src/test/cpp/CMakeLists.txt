@@ -6,7 +6,7 @@ add_subdirectory(util)
 target_sources(testingUtilities PRIVATE xml/xlevel.cpp)
 
 set( LOG4CXX_TEST_PROGRAM_PATH "" CACHE PATH "Extra path for test programs" )
-set( CMAKE_PROGRAM_PATH "${CMAKE_PROGRAM_PATH}" ${LOG4CXX_PROGRAM_PATH} )
+set( CMAKE_PROGRAM_PATH "${LOG4CXX_PROGRAM_PATH};${CMAKE_PROGRAM_PATH}" )
 
 # sed, zip, and gzip are needed for the tests to work properly
 # Note: option 'required' not available until cmake 3.18, however adding
@@ -71,10 +71,11 @@ add_subdirectory(xml)
 if( WIN32 )
 	get_filename_component(APR_DLL_DIR "${APR_DLL}" DIRECTORY)
 	get_filename_component(APR_UTIL_DLL_DIR "${APR_UTIL_DLL}" DIRECTORY)
-	get_filename_component(XMLLIB_DLL_DIR "${XMLLIB_DLL}" DIRECTORY)
+	get_filename_component(EXPAT_LIB_DIR "${EXPAT_LIBRARY}" DIRECTORY)
 
+	set(EXPAT_DLL_DIR "${EXPAT_LIB_DIR}/../bin")
 	set(LOG4CXX_DLL_DIR "$<SHELL_PATH:$<TARGET_FILE_DIR:log4cxx>>;")
-	set(PATH_FOR_TESTS ${CMAKE_PROGRAM_PATH};${APR_DLL_DIR};${APR_UTIL_DLL_DIR};${LOG4CXX_DLL_DIR};${XMLLIB_DLL_DIR}\;)
+	set(PATH_FOR_TESTS ${CMAKE_PROGRAM_PATH};${APR_DLL_DIR};${APR_UTIL_DLL_DIR};${LOG4CXX_DLL_DIR};${EXPAT_DLL_DIR}\;)
 	list(REMOVE_DUPLICATES PATH_FOR_TESTS)
 	set(NORMAL_PATH $ENV{PATH})
 	set(ESCAPED_PATH "")

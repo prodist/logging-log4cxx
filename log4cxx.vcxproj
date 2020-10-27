@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{92E8F114-2370-4909-B114-3EF1D8A0232E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootFolder>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory),Prodist.Cpp.Default.props))</RootFolder>
+  </PropertyGroup>
+  <Import Project="$(RootFolder)\Prodist.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LOG4CXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\apr\include;$(ProjectDir)\..\apr-util\include;$(ProjectDir)\src\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LOG4CXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\apr\include;$(ProjectDir)\..\apr-util\include;$(ProjectDir)\src\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main\cpp\action.cpp" />
+    <ClCompile Include="src\main\cpp\andfilter.cpp" />
+    <ClCompile Include="src\main\cpp\appenderattachableimpl.cpp" />
+    <ClCompile Include="src\main\cpp\appenderskeleton.cpp" />
+    <ClCompile Include="src\main\cpp\aprinitializer.cpp" />
+    <ClCompile Include="src\main\cpp\asyncappender.cpp" />
+    <ClCompile Include="src\main\cpp\basicconfigurator.cpp" />
+    <ClCompile Include="src\main\cpp\bufferedwriter.cpp" />
+    <ClCompile Include="src\main\cpp\bytearrayinputstream.cpp" />
+    <ClCompile Include="src\main\cpp\bytearrayoutputstream.cpp" />
+    <ClCompile Include="src\main\cpp\bytebuffer.cpp" />
+    <ClCompile Include="src\main\cpp\cacheddateformat.cpp" />
+    <ClCompile Include="src\main\cpp\charsetdecoder.cpp" />
+    <ClCompile Include="src\main\cpp\charsetencoder.cpp" />
+    <ClCompile Include="src\main\cpp\class.cpp" />
+    <ClCompile Include="src\main\cpp\classnamepatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\classregistration.cpp" />
+    <ClCompile Include="src\main\cpp\condition.cpp" />
+    <ClCompile Include="src\main\cpp\configurator.cpp" />
+    <ClCompile Include="src\main\cpp\consoleappender.cpp" />
+    <ClCompile Include="src\main\cpp\cyclicbuffer.cpp" />
+    <ClCompile Include="src\main\cpp\dailyrollingfileappender.cpp" />
+    <ClCompile Include="src\main\cpp\datagrampacket.cpp" />
+    <ClCompile Include="src\main\cpp\datagramsocket.cpp" />
+    <ClCompile Include="src\main\cpp\date.cpp" />
+    <ClCompile Include="src\main\cpp\dateformat.cpp" />
+    <ClCompile Include="src\main\cpp\datelayout.cpp" />
+    <ClCompile Include="src\main\cpp\datepatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\defaultconfigurator.cpp" />
+    <ClCompile Include="src\main\cpp\defaultloggerfactory.cpp" />
+    <ClCompile Include="src\main\cpp\defaultrepositoryselector.cpp" />
+    <ClCompile Include="src\main\cpp\domconfigurator.cpp" />
+    <ClCompile Include="src\main\cpp\exception.cpp" />
+    <ClCompile Include="src\main\cpp\fallbackerrorhandler.cpp" />
+    <ClCompile Include="src\main\cpp\file.cpp" />
+    <ClCompile Include="src\main\cpp\fileappender.cpp" />
+    <ClCompile Include="src\main\cpp\filedatepatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\fileinputstream.cpp" />
+    <ClCompile Include="src\main\cpp\filelocationpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\fileoutputstream.cpp" />
+    <ClCompile Include="src\main\cpp\filerenameaction.cpp" />
+    <ClCompile Include="src\main\cpp\filewatchdog.cpp" />
+    <ClCompile Include="src\main\cpp\filter.cpp" />
+    <ClCompile Include="src\main\cpp\filterbasedtriggeringpolicy.cpp" />
+    <ClCompile Include="src\main\cpp\fixedwindowrollingpolicy.cpp" />
+    <ClCompile Include="src\main\cpp\formattinginfo.cpp" />
+    <ClCompile Include="src\main\cpp\fulllocationpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\gzcompressaction.cpp" />
+    <ClCompile Include="src\main\cpp\hierarchy.cpp" />
+    <ClCompile Include="src\main\cpp\htmllayout.cpp" />
+    <ClCompile Include="src\main\cpp\inetaddress.cpp" />
+    <ClCompile Include="src\main\cpp\inputstream.cpp" />
+    <ClCompile Include="src\main\cpp\inputstreamreader.cpp" />
+    <ClCompile Include="src\main\cpp\integer.cpp" />
+    <ClCompile Include="src\main\cpp\integerpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\layout.cpp" />
+    <ClCompile Include="src\main\cpp\level.cpp" />
+    <ClCompile Include="src\main\cpp\levelmatchfilter.cpp" />
+    <ClCompile Include="src\main\cpp\levelpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\levelrangefilter.cpp" />
+    <ClCompile Include="src\main\cpp\linelocationpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\lineseparatorpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\literalpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\loader.cpp" />
+    <ClCompile Include="src\main\cpp\locale.cpp" />
+    <ClCompile Include="src\main\cpp\locationinfo.cpp" />
+    <ClCompile Include="src\main\cpp\logger.cpp" />
+    <ClCompile Include="src\main\cpp\loggermatchfilter.cpp" />
+    <ClCompile Include="src\main\cpp\loggerpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\loggingevent.cpp" />
+    <ClCompile Include="src\main\cpp\loggingeventpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\loglog.cpp" />
+    <ClCompile Include="src\main\cpp\logmanager.cpp" />
+    <ClCompile Include="src\main\cpp\logstream.cpp" />
+    <ClCompile Include="src\main\cpp\manualtriggeringpolicy.cpp" />
+    <ClCompile Include="src\main\cpp\mdc.cpp" />
+    <ClCompile Include="src\main\cpp\messagebuffer.cpp" />
+    <ClCompile Include="src\main\cpp\messagepatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\methodlocationpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\mutex.cpp" />
+    <ClCompile Include="src\main\cpp\nameabbreviator.cpp" />
+    <ClCompile Include="src\main\cpp\namepatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\ndc.cpp" />
+    <ClCompile Include="src\main\cpp\ndcpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\nteventlogappender.cpp" />
+    <ClCompile Include="src\main\cpp\objectimpl.cpp" />
+    <ClCompile Include="src\main\cpp\objectoutputstream.cpp" />
+    <ClCompile Include="src\main\cpp\objectptr.cpp" />
+    <ClCompile Include="src\main\cpp\obsoleterollingfileappender.cpp" />
+    <ClCompile Include="src\main\cpp\odbcappender.cpp" />
+    <ClCompile Include="src\main\cpp\onlyonceerrorhandler.cpp" />
+    <ClCompile Include="src\main\cpp\optionconverter.cpp" />
+    <ClCompile Include="src\main\cpp\outputdebugstringappender.cpp" />
+    <ClCompile Include="src\main\cpp\outputstream.cpp" />
+    <ClCompile Include="src\main\cpp\outputstreamwriter.cpp" />
+    <ClCompile Include="src\main\cpp\patternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\patternlayout.cpp" />
+    <ClCompile Include="src\main\cpp\patternparser.cpp" />
+    <ClCompile Include="src\main\cpp\pool.cpp" />
+    <ClCompile Include="src\main\cpp\properties.cpp" />
+    <ClCompile Include="src\main\cpp\propertiespatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\propertyconfigurator.cpp" />
+    <ClCompile Include="src\main\cpp\propertyresourcebundle.cpp" />
+    <ClCompile Include="src\main\cpp\propertysetter.cpp" />
+    <ClCompile Include="src\main\cpp\reader.cpp" />
+    <ClCompile Include="src\main\cpp\relativetimedateformat.cpp" />
+    <ClCompile Include="src\main\cpp\relativetimepatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\resourcebundle.cpp" />
+    <ClCompile Include="src\main\cpp\rollingfileappender.cpp" />
+    <ClCompile Include="src\main\cpp\rollingpolicy.cpp" />
+    <ClCompile Include="src\main\cpp\rollingpolicybase.cpp" />
+    <ClCompile Include="src\main\cpp\rolloverdescription.cpp" />
+    <ClCompile Include="src\main\cpp\rootlogger.cpp" />
+    <ClCompile Include="src\main\cpp\serversocket.cpp" />
+    <ClCompile Include="src\main\cpp\simpledateformat.cpp" />
+    <ClCompile Include="src\main\cpp\simplelayout.cpp" />
+    <ClCompile Include="src\main\cpp\sizebasedtriggeringpolicy.cpp" />
+    <ClCompile Include="src\main\cpp\smtpappender.cpp" />
+    <ClCompile Include="src\main\cpp\socket.cpp" />
+    <ClCompile Include="src\main\cpp\socketappender.cpp" />
+    <ClCompile Include="src\main\cpp\socketappenderskeleton.cpp" />
+    <ClCompile Include="src\main\cpp\sockethubappender.cpp" />
+    <ClCompile Include="src\main\cpp\socketoutputstream.cpp" />
+    <ClCompile Include="src\main\cpp\strftimedateformat.cpp" />
+    <ClCompile Include="src\main\cpp\stringhelper.cpp" />
+    <ClCompile Include="src\main\cpp\stringmatchfilter.cpp" />
+    <ClCompile Include="src\main\cpp\stringtokenizer.cpp" />
+    <ClCompile Include="src\main\cpp\synchronized.cpp" />
+    <ClCompile Include="src\main\cpp\syslogappender.cpp" />
+    <ClCompile Include="src\main\cpp\syslogwriter.cpp" />
+    <ClCompile Include="src\main\cpp\system.cpp" />
+    <ClCompile Include="src\main\cpp\systemerrwriter.cpp" />
+    <ClCompile Include="src\main\cpp\systemoutwriter.cpp" />
+    <ClCompile Include="src\main\cpp\telnetappender.cpp" />
+    <ClCompile Include="src\main\cpp\threadcxx.cpp" />
+    <ClCompile Include="src\main\cpp\threadlocal.cpp" />
+    <ClCompile Include="src\main\cpp\threadpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\threadspecificdata.cpp" />
+    <ClCompile Include="src\main\cpp\throwableinformationpatternconverter.cpp" />
+    <ClCompile Include="src\main\cpp\timebasedrollingpolicy.cpp" />
+    <ClCompile Include="src\main\cpp\timezone.cpp" />
+    <ClCompile Include="src\main\cpp\transcoder.cpp" />
+    <ClCompile Include="src\main\cpp\transform.cpp" />
+    <ClCompile Include="src\main\cpp\triggeringpolicy.cpp" />
+    <ClCompile Include="src\main\cpp\ttcclayout.cpp" />
+    <ClCompile Include="src\main\cpp\writer.cpp" />
+    <ClCompile Include="src\main\cpp\writerappender.cpp" />
+    <ClCompile Include="src\main\cpp\xmllayout.cpp" />
+    <ClCompile Include="src\main\cpp\xmlsocketappender.cpp" />
+    <ClCompile Include="src\main\cpp\zipcompressaction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\main\include\log4cxx\appender.h" />
+    <ClInclude Include="src\main\include\log4cxx\appenderskeleton.h" />
+    <ClInclude Include="src\main\include\log4cxx\asyncappender.h" />
+    <ClInclude Include="src\main\include\log4cxx\basicconfigurator.h" />
+    <ClInclude Include="src\main\include\log4cxx\consoleappender.h" />
+    <ClInclude Include="src\main\include\log4cxx\dailyrollingfileappender.h" />
+    <ClInclude Include="src\main\include\log4cxx\defaultconfigurator.h" />
+    <ClInclude Include="src\main\include\log4cxx\defaultloggerfactory.h" />
+    <ClInclude Include="src\main\include\log4cxx\file.h" />
+    <ClInclude Include="src\main\include\log4cxx\fileappender.h" />
+    <ClInclude Include="src\main\include\log4cxx\hierarchy.h" />
+    <ClInclude Include="src\main\include\log4cxx\htmllayout.h" />
+    <ClInclude Include="src\main\include\log4cxx\layout.h" />
+    <ClInclude Include="src\main\include\log4cxx\level.h" />
+    <ClInclude Include="src\main\include\log4cxx\log4cxx.h" />
+    <ClInclude Include="src\main\include\log4cxx\logger.h" />
+    <ClInclude Include="src\main\include\log4cxx\logmanager.h" />
+    <ClInclude Include="src\main\include\log4cxx\logstring.h" />
+    <ClInclude Include="src\main\include\log4cxx\mdc.h" />
+    <ClInclude Include="src\main\include\log4cxx\ndc.h" />
+    <ClInclude Include="src\main\include\log4cxx\patternlayout.h" />
+    <ClInclude Include="src\main\include\log4cxx\portability.h" />
+    <ClInclude Include="src\main\include\log4cxx\propertyconfigurator.h" />
+    <ClInclude Include="src\main\include\log4cxx\provisionnode.h" />
+    <ClInclude Include="src\main\include\log4cxx\rollingfileappender.h" />
+    <ClInclude Include="src\main\include\log4cxx\simplelayout.h" />
+    <ClInclude Include="src\main\include\log4cxx\stream.h" />
+    <ClInclude Include="src\main\include\log4cxx\ttcclayout.h" />
+    <ClInclude Include="src\main\include\log4cxx\writerappender.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\apr-iconv\libapriconv.vcxproj">
+      <Project>{229a821f-7635-4b26-b0fc-01857e7e2c3b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\apr-util\libaprutil.vcxproj">
+      <Project>{c72fffdd-2b57-47e0-8164-eb9cc3265df1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\apr\libapr.vcxproj">
+      <Project>{0feb7a6c-4e56-b2f7-f791-1d0348b23344}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

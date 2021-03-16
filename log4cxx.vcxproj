@@ -34,9 +34,15 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\apr\libapr.props" />
+    <Import Project="..\apr-iconv\libapriconv.props" />
+    <Import Project="..\apr-util\libaprutil.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\apr\libapr.props" />
+    <Import Project="..\apr-iconv\libapriconv.props" />
+    <Import Project="..\apr-util\libaprutil.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -50,7 +56,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LOG4CXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\apr\include;$(ProjectDir)\..\apr-util\include;$(ProjectDir)\src\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -63,7 +69,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LOG4CXX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\apr\include;$(ProjectDir)\..\apr-util\include;$(ProjectDir)\src\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src\main\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
@@ -257,15 +263,12 @@
     <ClInclude Include="src\main\include\log4cxx\writerappender.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\apr-iconv\libapriconv.vcxproj">
-      <Project>{229a821f-7635-4b26-b0fc-01857e7e2c3b}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\apr-util\libaprutil.vcxproj">
       <Project>{c72fffdd-2b57-47e0-8164-eb9cc3265df1}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\apr\libapr.vcxproj">
-      <Project>{0feb7a6c-4e56-b2f7-f791-1d0348b23344}</Project>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="log4cxx.props" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
